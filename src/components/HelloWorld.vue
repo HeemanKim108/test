@@ -31,11 +31,17 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  mounted() {
+    axios.get("/api").then((res) => {
+      console.log(res.data);
+    });
+  },
 }
 </script>
 
